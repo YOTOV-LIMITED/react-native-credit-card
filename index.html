@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-native-credit-card by YOTOV-LIMITED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-native-credit-card</h1>
+      <h2 class="project-tagline">:credit_card: React native credit card display component</h2>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card" class="btn">View on GitHub</a>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-native-credit-card-" class="anchor" href="#react-native-credit-card-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>React Native Credit Card <g-emoji alias="credit_card" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4b3.png">💳</g-emoji>
+</h1>
+
+<h3>
+<a id="a-better-credit-card-form-for-react-native" class="anchor" href="#a-better-credit-card-form-for-react-native" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A better credit card form for React Native</h3>
+
+<p>React native port of the display of Card by <a href="https://github.com/jessepollak/card">@jessepollak</a></p>
+
+<p><img src="http://i.giphy.com/26gJznmOI4qQSA2UE.gif" alt="rn-credit-card"> <img src="http://i.giphy.com/l0MYFGQxfygHtBN84.gif" alt="rn-ios"></p>
+
+<h4>
+<a id="background" class="anchor" href="#background" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Background</h4>
+
+<p>This is a react native port of Card. There is a <a href="https://github.com/JohnyDays/react-credit-card">react port of Card</a>, but it still renders on browser DOM (which is not as good as native view), so this library will take advantage of both.</p>
+
+<h4>
+<a id="goals" class="anchor" href="#goals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goals</h4>
+
+<ul>
+<li>Look like Card.</li>
+<li>Provide a react interface for displaying credit card information.</li>
+</ul>
+
+<h4>
+<a id="design-resources" class="anchor" href="#design-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design Resources</h4>
+
+<p>I got the design resources from the <a href="https://dribbble.com/shots/2177105-Checkout-Flow-Card">Ramakrishna V's dribbble</a></p>
+
+<p><img src="https://d13yacurqjgara.cloudfront.net/users/484057/screenshots/2177105/checkout_generic.gif" alt="design"></p>
+
+<h4>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h4>
+
+<ul>
+<li><code>npm install --save react-native-credit-card</code></li>
+<li>In your react native script add these lines</li>
+</ul>
+
+<div class="highlight highlight-source-js-jsx"><pre><span class="pl-k">import</span><span class="pl-smi"> CreditCard from</span> '<span class="pl-smi">react</span>-<span class="pl-smi">native</span>-<span class="pl-smi">credit</span>-<span class="pl-smi">card</span>';
+
+
+&lt;<span class="pl-smi">CreditCard</span> 
+<span class="pl-smi">    type</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">type</span>}
+<span class="pl-smi">    imageFront</span>={<span class="pl-smi">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./images/card-front.png<span class="pl-pds">'</span></span>)}
+<span class="pl-smi">    imageBack</span>={<span class="pl-smi">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./images/card-back.png<span class="pl-pds">'</span></span>)}
+<span class="pl-smi">    shiny</span>={<span class="pl-smi">false</span>}
+<span class="pl-smi">    bar</span>={<span class="pl-smi">false</span>}
+<span class="pl-smi">    focused</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">focused</span>}
+<span class="pl-smi">    number</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">number</span>}
+<span class="pl-smi">    name</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">name</span>}
+<span class="pl-smi">    expiry</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">expiry</span>}
+<span class="pl-smi">    cvc</span>={<span class="pl-smi">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">cvc</span>}/&gt;</pre></div>
+
+<h3>
+<a id="available-props" class="anchor" href="#available-props" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Available props</h3>
+
+<ul>
+<li>
+<code>cvc</code>: number(max 4 characters, will cut the rest)(The "/" will be automatically added)</li>
+<li>
+<code>name</code>: string (max 2 lines)</li>
+<li>
+<code>number</code>: credit card number(max 16 characters, will cut the rest)</li>
+<li>
+<code>expiry</code>: number(max 4 characters, will cut the rest) </li>
+<li>
+<code>imageFront</code>: image(image file for the card front card background -- with require) </li>
+<li>
+<code>imageBack</code>: image(image file for the card back card background -- with require) </li>
+<li>
+<code>shiny</code>: boolean(show sticker) </li>
+<li>
+<code>bar</code>: boolean(show bar on the back) </li>
+<li>
+<code>focused</code>: one of the above fields
+
+<ul>
+<li>type</li>
+<li>name</li>
+<li>number</li>
+<li>expiry</li>
+<li>cvc (Upon focusing cvc, the form will be rotated until this is changed.)</li>
+<li>null</li>
+</ul>
+</li>
+<li>
+<code>type</code>: Available in case you need to explicitly specify the card type. In most cases this will be inferred for you as the user fills the form, so you won't need to use it. One of the following:
+
+<ul>
+<li>dankort</li>
+<li>discover</li>
+<li>mastercard</li>
+<li>visa</li>
+<li>amex</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todo</h4>
+
+<ul>
+<li>Automated test </li>
+<li>More credit card type variations</li>
+</ul>
+
+<h4>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h4>
+
+<p>todo.</p>
+
+<p>Most of the credit goes to <a href="http://github.com/jessepollak">@jessepollak</a> and <a href="http://github.com/JohnyDays">@JohnyDays</a> for creating and mantaining <a href="http://github.com/jessepollak/card">Card</a> and <a href="https://github.com/JohnyDays/react-credit-card">React Credit Card</a>, I just ported it over to React Native.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/YOTOV-LIMITED/react-native-credit-card">React-native-credit-card</a> is maintained by <a href="https://github.com/YOTOV-LIMITED">YOTOV-LIMITED</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
